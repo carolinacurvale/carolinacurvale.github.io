@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carolina Curvale, PhD</title>
+    <meta name="description" content="Political Scientist — Political Economy, Comparative Politics, Latin America & AI">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #122032;
+            --ink-light: #1a2d45;
+            --sepia: #b2936c;
+            --cream: #ebe4d8;
+            --gold: #d2b482;
+            --text: #c8c0b4;
+            --text-dim: #8a8278;
+            --white: #f0ece6;
+            --link: #d2b482;
+            --link-hover: #e8d4b0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--ink);
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        a:hover {
+            border-bottom-color: var(--link-hover);
+        }
+
+        /* ── HEADER ── */
+        header {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 24px 40px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: var(--ink-light);
+            border: 2px solid var(--sepia);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-text h1 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--cream);
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+        }
+
+        .tagline {
+            font-size: 0.95rem;
+            color: var(--gold);
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            margin-bottom: 16px;
+        }
+
+        .affiliation {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 20px;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.82rem;
+            letter-spacing: 0.02em;
+        }
+        .links a {
+            color: var(--text-dim);
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            font-size: 0.72rem;
+            padding: 4px 0;
+        }
+        .links a:hover {
+            color: var(--gold);
+        }
+
+        /* ── DIVIDER ── */
+        .divider {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .divider hr {
+            border: none;
+            height: 1px;
+            background: var(--sepia);
+            opacity: 0.4;
+        }
+
+        /* ── MAIN ── */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* ── BIO ── */
+        .bio {
+            margin-bottom: 56px;
+        }
+        .bio p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            margin-bottom: 56px;
+        }
+
+        section h2 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--sepia);
+            letter-spacing: 0.02em;
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(178, 147, 108, 0.2);
+        }
+
+        /* ── PUBLICATIONS ── */
+        .pub-group {
+            margin-bottom: 32px;
+        }
+
+        .pub-group h3 {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-dim);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .pub {
+            margin-bottom: 14px;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            padding-left: 12px;
+            border-left: 2px solid rgba(178, 147, 108, 0.15);
+        }
+        .pub .title {
+            color: var(--cream);
+        }
+        .pub .journal {
+            font-style: italic;
+            color: var(--text-dim);
+        }
+        .pub .year {
+            color: var(--sepia);
+            font-weight: 500;
+        }
+
+        /* ── PREPRINTS ── */
+        .preprint {
+            margin-bottom: 14px;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            padding-left: 12px;
+            border-left: 2px solid rgba(210, 180, 130, 0.3);
+        }
+
+        /* ── CV BUTTON ── */
+        .cv-link {
+            display: inline-block;
+            padding: 10px 28px;
+            border: 1px solid var(--sepia);
+            color: var(--sepia);
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+        .cv-link:hover {
+            background: var(--sepia);
+            color: var(--ink);
+            border-bottom-color: transparent;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 24px 48px;
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            text-align: center;
+        }
+
+        /* ── MOBILE ── */
+        @media (max-width: 600px) {
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .links { justify-content: center; }
+            header { padding: 48px 20px 32px; }
+            main { padding: 32px 20px 64px; }
+            .header-text h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="photo">
+            <!-- Add your photo as photo.jpg in the repo root -->
+            <img src="photo.jpg" alt="Carolina Curvale" onerror="this.style.display='none'">
+        </div>
+        <div class="header-text">
+            <h1>Carolina Curvale, PhD</h1>
+            <div class="tagline">Political Scientist · Political Economy · Latin America &amp; AI</div>
+            <div class="affiliation">Associate Professor, Department of Political Studies · FLACSO Ecuador</div>
+            <div class="links">
+                <a href="https://scholar.google.com/citations?user=25wMoJIAAAAJ" target="_blank">Google Scholar</a>
+                <a href="https://orcid.org/0000-0002-3493-9855" target="_blank">ORCID</a>
+                <a href="https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=11408961" target="_blank">SSRN</a>
+                <a href="https://bsky.app/profile/ccurvale.bsky.social" target="_blank">Bluesky</a>
+                <a href="https://twitter.com/ccurvale" target="_blank">X</a>
+                <a href="https://www.linkedin.com/in/carolinacurvale/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="divider"><hr></div>
+
+<main>
+
+    <div class="bio">
+        <p>Carolina Curvale is a political scientist (PhD NYU) and Associate Professor in the Department of Political Studies at FLACSO Ecuador. Her research spans comparative politics, political economy, and Latin American politics.</p>
+        <p>Her current work examines the political economy of AI in technology-taker societies. This extends a long-standing program on institutional fragility and democratic stability in Latin America, grounded in an original 19-country dataset spanning two centuries of political instability and an early collaboration with Adam Przeworski. Parallel streams address inequality, electoral behavior, and political institutions.</p>
+        <p>Her work is comparative, empirically grounded, and quantitatively oriented, combining formal theory, survey experiments, and original historical and microdata.</p>
+    </div>
+
+    <section>
+        <h2>Working Papers &amp; Preprints</h2>
+
+        <div class="preprint">
+            <span class="title">Two-Stage AI Adoption in Technology-Taker Economies: Evidence from Latin America.</span>
+            <a href="https://doi.org/10.2139/ssrn.6692385" target="_blank">SSRN Preprint</a>.
+        </div>
+
+        <div class="preprint">
+            <span class="title">Between Takers and Frontier: How States Carve Out Autonomy in the AI Stack.</span>
+            To be presented at ICASF 2027, Abu Dhabi University.
+        </div>
+    </section>
+
+    <section>
+        <h2>Selected Publications</h2>
+
+        <div class="pub-group">
+            <h3>Journal Articles</h3>
+
+            <div class="pub">
+                <span class="year">2026.</span>
+                Curvale, C. &amp; Vera, J.S.
+                <span class="title">Varieties of Risk: Chinese and American Investment in Latin American Extractives, 2000–2010.</span>
+                <span class="journal">The Extractive Industries and Society</span>.
+                <a href="https://doi.org/10.1016/j.exis.2026.102004" target="_blank">doi</a>
+            </div>
+
+            <div class="pub">
+                <span class="year">2026.</span>
+                Jaramillo-Ramón, J.P. &amp; Curvale, C.
+                <span class="title">Homicidal Violence and State Capacity in Latin America: The Story of the Paper Leviathans.</span>
+                <span class="journal">Crime, Law and Social Change</span> 84, 29.
+                <a href="https://doi.org/10.1007/s10611-026-10273-6" target="_blank">doi</a>
+            </div>
+
+            <div class="pub">
+                <span class="year">2026.</span>
+                Curvale, C.
+                <span class="title">Inteligencia artificial y elecciones: un experimento en el balotaje ecuatoriano 2025.</span>
+                <span class="journal">Revista Mexicana de Derecho Electoral</span> 13(24).
+                <a href="https://doi.org/10.22201/iij.24487910e.2026.24.20952" target="_blank">doi</a>
+            </div>
+
+            <div class="pub">
+                <span class="year">2025.</span>
+                Curvale, C. &amp; Rubio, M.
+                <span class="title">Estrategias digitales en doble vuelta: análisis en la plataforma X de la campaña presidencial ecuatoriana de 2025.</span>
+                <span class="journal">Democracias</span> 15, 51–82.
+                <a href="https://doi.org/10.54887/27376192.169" target="_blank">doi</a>
+            </div>
+
+            <div class="pub">
+                <span class="year">2025.</span>
+                Curvale, C.
+                <span class="title">Inclusión electoral y filtros democráticos: un análisis histórico del sufragio en Latinoamérica (1811–2005).</span>
+                <span class="journal">Revista de Historia</span> 91.
+                <a href="https://doi.org/10.15359/rh.91.4" target="_blank">doi</a>
+            </div>
+
+            <div class="pub">
+                <span class="year">2023.</span>
+                Curvale, C.
+                <span class="title">Measuring Latin American Political Instability Since Independence.</span>
+                <span class="journal">Research, Society and Development</span> 12(13).
+                <a href="https://doi.org/10.33448/rsd-v12i13.44228" target="_blank">doi</a>
+            </div>
+
+            <div class="pub">
+                <span class="year">2022.</span>
+                Curvale, C. &amp; Pérez-Arrobo, G.
+                <span class="title">Economic Crises and Political [In]Stability: Latin American Polities in the Face of the 1930 Great Depression.</span>
+                <span class="journal">Lecturas de Economía</span> 97, 181–216.
+                <a href="https://doi.org/10.17533/udea.le.n97a346665" target="_blank">doi</a>
+            </div>
+
+            <div class="pub">
+                <span class="year">2021.</span>
+                Curvale, C. &amp; Perez, G.
+                <span class="title">Documentation Requirements in Political Science Journals: Moving Towards Open Access Practices.</span>
+                <span class="journal">Revista de Ciencia Política</span> 41(3).
+                <a href="http://dx.doi.org/10.4067/S0718-090X2021005000108" target="_blank">doi</a>
+            </div>
+
+            <div class="pub">
+                <span class="year">2020.</span>
+                Ponce, J. &amp; Curvale, C.
+                <span class="title">Cash Transfers and Political Support: Evidence from Ecuador.</span>
+                <span class="journal">International Journal of Development Issues</span> 19(2), 256–274.
+                <a href="https://doi.org/10.1108/IJDI-11-2019-0187" target="_blank">doi</a>
+            </div>
+
+            <div class="pub">
+                <span class="year">2016.</span>
+                Basabe-Serrano, S. &amp; Curvale, C.
+                <span class="title">El impacto de la (in)estabilidad judicial en el crecimiento económico en América Latina.</span>
+                <span class="journal">Política y Gobierno</span> 23(2).
+                <a href="http://www.politicaygobierno.cide.edu/index.php/pyg/article/view/823/604" target="_blank">link</a>
+            </div>
+        </div>
+
+        <div class="pub-group">
+            <h3>Book Chapters</h3>
+
+            <div class="pub">
+                <span class="year">2008.</span>
+                Przeworski, A. &amp; Curvale, C.
+                <span class="title">Does Politics Explain the Economic Gap Between the United States and Latin America?</span>
+                In F. Fukuyama (ed.), <span class="journal">Falling Behind</span>. Oxford University Press.
+            </div>
+
+            <div class="pub">
+                <span class="year">2007.</span>
+                Curvale, C. &amp; Przeworski, A.
+                <span class="title">Instituciones políticas y desarrollo económico en las Américas: el largo plazo.</span>
+                In <span class="journal">Visiones sobre el Desarrollo en América Latina</span>. CIDOB/CEPAL.
+                <a href="https://www.cepal.org/es/publicaciones/2816-visiones-desarrollo-america-latina" target="_blank">link</a>
+            </div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 24px;">
+            Full list of publications on <a href="https://orcid.org/0000-0002-3493-9855" target="_blank">ORCID</a>.
+        </p>
+    </section>
+
+    <section>
+        <h2>Curriculum Vitae</h2>
+        <p style="margin-bottom: 20px; font-size: 0.9rem;">Download the full CV below.</p>
+        <a href="Curvale_CV.pdf" class="cv-link" target="_blank">Download CV (PDF)</a>
+    </section>
+
+</main>
+
+<div class="divider"><hr></div>
+
+<footer>
+    <p>Carolina Curvale · FLACSO Ecuador · ccurvale@flacso.edu.ec</p>
+</footer>
+
+</body>
+</html>
